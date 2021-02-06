@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card.js";
 import colors from "../data/colors.json";
 
@@ -8,8 +8,8 @@ function CardList ({search}) {
   useEffect(()=>{
     setResults(colors.filter(
       (color) =>
-        color.name.includes(search) ||
-        color.hex.includes(search)
+        color.name.toLowerCase().includes(search.toLowerCase()) ||
+        color.hex.toLowerCase().includes(search.toLowerCase())
       ))},[search]);
  
     return (

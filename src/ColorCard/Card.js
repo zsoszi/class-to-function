@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React  from "react";
 import styled, { ThemeProvider } from "styled-components";
 
-function Card ({color}) {
 
-  const Div = styled.div`
+const Div = styled.div`
     width: 100%;
     height: 150px;
     border: 1px solid black;
@@ -13,13 +12,12 @@ function Card ({color}) {
       props.theme.backgroundColor === "#000000" ? "white" : "black"};
   `;
 
-  useEffect(()=>{
+Div.defaultProps = {
+  theme: { color: 0xffffff, backgroundColor: "#fff" },
+};
 
-    Div.defaultProps = {
-      theme: { color: 0xffffff, backgroundColor: "#fff" },
-    };
+function Card ({color}) {
 
-  },)
   const theme = {
     backgroundColor: color.hex
   }

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
-function Searchbar() {
-	const [search, setSearch] = useState("");
 
-	const Input = styled.input`
+const Input = styled.input`
 		margin: 10px auto;
 		background: linear-gradient(
 			90deg,
@@ -14,6 +12,8 @@ function Searchbar() {
 		);
 		color: yellow;
 	`;
+  
+function Searchbar({search,setSearch}) {
 
 	useEffect(() => {
 		setSearch(search);
