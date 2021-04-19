@@ -9,6 +9,7 @@ function App() {
 
 	useEffect(() => {
 		document.addEventListener("click", welcome);
+		return () => document.removeEventListener("click", welcome);
   });
 
 	const welcome = () => {

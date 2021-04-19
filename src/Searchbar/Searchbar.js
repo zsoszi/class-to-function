@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 
@@ -14,10 +14,6 @@ const Input = styled.input`
 	`;
   
 function Searchbar({search,setSearch}) {
-
-	useEffect(() => {
-		setSearch(search);
-	}, [search, setSearch]);
 
 	const onChangeHandler = (e) => {
 		setSearch(e.target.value);
